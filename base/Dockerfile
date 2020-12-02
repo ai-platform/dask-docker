@@ -2,14 +2,16 @@ FROM continuumio/miniconda3:4.8.2
 
 RUN conda install --yes \
     -c conda-forge \
-    python==3.8 \
+    python==3.8.6 \
     python-blosc \
     cytoolz \
-    dask==2.30.0 \
-    lz4 \
+    dask \
+    distributed \
+    lz4==3.1.1 \
+    s3fs \
     nomkl \
-    numpy==1.18.1 \
-    pandas==1.0.1 \
+    numpy \
+    pandas \
     tini==0.18.0 \
     && conda clean -tipsy \
     && find /opt/conda/ -type f,l -name '*.a' -delete \
